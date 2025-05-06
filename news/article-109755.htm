@@ -1,0 +1,508 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnbrowser.github.io/news/article-109755.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Java 8 特性 Stream API 详细操作教程</title>
+        <meta name="description" content="Stream 流是简化集合和数组操作的一种编程方式，使得集合和数组的操作像水流一样流畅。 更多参考：https://www.yuque.com/zhangshuaiyin/java/java-8-st" />
+        <link rel="icon" href="/assets/website/img/vmess_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN浏览器 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnbrowser.github.io/news/article-109755.htm" />
+    <meta property="og:site_name" content="VPN浏览器 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="Java 8 特性 Stream API 详细操作教程" />
+    <meta property="og:image" content="https://vpnbrowser.github.io/uploads/20240804-1/c2ec75d432807a3cd45787672cf8d532.webp" />
+        <meta property="og:release_date" content="2025-05-02T09:23:26" />
+    <meta property="og:updated_time" content="2025-05-02T09:23:26" />
+        <meta property="og:description" content="Stream 流是简化集合和数组操作的一种编程方式，使得集合和数组的操作像水流一样流畅。 更多参考：https://www.yuque.com/zhangshuaiyin/java/java-8-st" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Java 8 特性 Stream API 详细操作教程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/website/css/vmess_node/style-starter.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3ES7YX37P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3ES7YX37P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--header-->
+    <div class="w3l-top-header">
+        <header id="site-header" class="fixed-top">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark stroke">
+                    <a class="navbar-brand" href="/">
+                                        <span>VPN浏览器</span>
+                                        </a>
+                    <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                        <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mx-auto">
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/free-nodes/">免费节点</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/news/">新闻资讯</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/client.htm">客户端</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!--/header-->
+    <!-- breadcrum -->
+    <section class="w3l-deal-breadcrum">
+        <div class="breadcrum py-5">
+            <div class="container">
+                <h1>Java 8 特性 Stream API 详细操作教程</h1>
+                <p><a href="/">首页</a> &nbsp; / &nbsp; <a href="/news/">新闻资讯</a>  &nbsp; / &nbsp; 正文</p>
+            </div>
+        </div>
+    </section>
+    <!-- //breadcrum -->
+        <!-- //stats -->
+    <section class="w3l-index2 py-5" id="about">
+        <div class="container py-lg-3">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="markdown_views prism-tomorrow-night-eighties"> <p>Stream 流是简化集合和数组操作的一种编程方式，使得集合和数组的操作像水流一样流畅。<br /> 更多参考：https://www.yuque.com/zhangshuaiyin/java/java-8-stream-api</p> <p>下面通过<strong>原理</strong> +<strong>实战</strong> 的方式了解 Stream 的用法。</p> </h1> <ol> <li>集合：default Stream stream();</li> <li>数组： <ol> <li>Arrays.stream(T[] array);</li> <li>Stream.of(T… values); （可变参数可以接收数组作为参数）</li> </ol> </li> </ol> <pre><code class="prism language-java"><span class="token comment">// 1. 集合</span><span class="token class-name">Collection</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> ss<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 2. 数组</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arrs<span class="token operator">=</span><span class="token keyword">new</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{<!-- --></span><span class="token string">"Java"</span><span class="token punctuation">,</span><span class="token string">"Python"</span><span class="token punctuation">,</span><span class="token string">"C"</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> arrs1<span class="token operator">=</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span>arrs<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> arrs2<span class="token operator">=</span><span class="token class-name">Stream</span><span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>arrs<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> </h1> <ol> <li> <p>中间操作(intermediate)：通过一系列中间（Intermediate）方法，对数据集进行过滤、检索等数据集的再次处理。</p> <ol> <li>中间操作的特点是方法返回值还是 Stream 类型，可以继续链式调用其他方法执行操作。</li> <li>中间操作是对数据的加工，注意，中间操作是 lazy 操作，并不会立马启动，需要等待终止操作才会执行。</li> </ol> </li> <li> <p>终止操作(Terminal)：通过最终（terminal）方法完成对数据集中元素的处理。</p> <ol> <li>终止操作的特点是方法返回值为 空 或者 一个其他类型的结果。</li> <li>终止操作是 Stream 的启动操作，<strong>只有加上终止操作，Stream才会真正的开始执行</strong>。</li> </ol> </li> </ol> <ul> <li>无状态(Stateless)：指元素的处理不受之前元素的影响；</li> <li>有状态(Stateful)：指该操作只有拿到所有元素之后才能继续下去。</li> <li>非短路操作(Unshort-circuiting)：指必须处理所有元素才能得到最终结果；</li> </ul> <p>短路操作(Short-circuiting)：指遇到某些符合条件的元素就可以得到最终结果，如 A || B，只要A为true，则无需判断B的结果。</p> <h2><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/59f5d1687b4708ee5cb57ff6e4bbcc26.jpg" alt="Java 8 特性 Stream API 详细操作教程"> 测试集合</h2> <p>Stream 中间操作不会自己启动，所以测试中都会加上 forEach 终止操作来启动 Stream 流的执行。</p> <pre><code class="prism language-java"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list<span class="token operator">=</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span><span class="token string">"Java"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"Spring"</span><span class="token punctuation">,</span><span class="token string">"Mysql"</span><span class="token punctuation">,</span><span class="token string">"Python"</span><span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token string">"C++"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h2>中间操作</h2> <h3>filter</h3> <p>【中间操作】过滤元素，筛选 Stream 流中符合条件的元素，作为流返回。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> predicate<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：找出集合中的空元素</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">isEmpty</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>map</h3> <p>【中间操作】对 Stream 流中的元素执行指定操作后映射为新的值流返回（会改变之前的集合元素），相当于加工。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">Function</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token keyword">extends</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> mapper<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：将集合中的元素变为大写</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">toUpperCase</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>peek</h3> <p>【中间操作】返回一个由该流的元素组成的流，另外在每个元素上执行提供的操作，因为元素从结果流中被消耗。（Consumer 没有返回值，不会改变原来 Stream 流中的值）</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">peek</span><span class="token punctuation">(</span><span class="token class-name">Consumer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> action<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：源码中的说明</li> </ol> <blockquote> <p>@apiNote This method exists mainly to support debugging, where you want to see the elements as they flow past a certain point in a pipeline:<br /> 此方法的存在主要是为了支持调试，您希望在其中查看元素流经管道中的某个点时的情况：</p> </blockquote> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>e<span class="token operator">-&gt;</span> e<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span>e<span class="token operator">-&gt;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Filtered value: "</span><span class="token operator">+</span> e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token operator">::</span><span class="token function">toUpperCase</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">peek</span><span class="token punctuation">(</span>e<span class="token operator">-&gt;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Mapped value: "</span><span class="token operator">+</span> e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>limit</h3> <p>【短路有状态中间操作】截取 Stream 流中前 maxSize 个 元素。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token keyword">long</span> maxSize<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：取集合中前 4 个元素。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>skip</h3> <p>【有状态中间操作】在丢弃流的前 n 元素后，返回由该流的其余元素组成的流。 如果此流包含少于 n 元素，则将返回一个空流。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token keyword">long</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：跳过集合中前 4 个元素。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>distinct</h3> <p>【有状态中间操作】返回由该流的不同元素（根据Object.equals(Object) ）组成的流。</p> <ul> <li>对于有序流，不同元素的选择是稳定的（对于重复元素，保留遇到顺序中最先出现的元素。）</li> <li>对于无序流，没有稳定性保证。</li> </ul> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">distinct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：去除集合中重复的元素。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">distinct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>sorted</h3> <p>【有状态中间操作】返回由该流的元素组成的流，按自然顺序排序。</p> <ul> <li>如果此流的元素不是 Comparable ，则在执行终端操作时可能会抛出java.lang.ClassCastException 。</li> <li>对于有序流，排序是稳定的。 对于无序流，没有稳定性保证。</li> </ul> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Stream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：按照 自然排序/自然排序倒序 集合中的元素。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 还可以实现 Comparator 接口来自定义排序规则</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">sorted</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">reverseOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h2>终止操作</h2> <h3>forEach</h3> <p>【终止操作】遍历操作，依次遍历 Stream 流中的元素，并执行给定的行为。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">void</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">Consumer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> action<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：遍历集合中的元素</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token operator">::</span><span class="token function">println</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 集合只遍历可简写为 Collection 自带的 forEach() 方法</span><span class="token comment">// list.forEach(System.out::println);</span></code></pre> <h3>toArray</h3> <p>【终止操作】返回一个包含此流元素的数组。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：将集合转成数组。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 对于集合可简写为 Collection 自带的 toArray() 方法</span><span class="token comment">// list.toArray();</span></code></pre> <h3>min/max</h3> <p>【终止操作】返回 Stream 流中最小/最大的元素</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">min</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">max</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> comparator<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：返回集合中最小/最大的元素</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> min<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">naturalOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>min<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> max<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token class-name">Comparator</span><span class="token punctuation">.</span><span class="token function">naturalOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>max<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>count</h3> <p>【终止操作】返回此流中元素的计数。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">long</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：统计集合中的元素个数</li> </ol> <pre><code class="prism language-java"><span class="token keyword">long</span> size<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 对于集合可简写为 Collection 自带的 size() 方法</span><span class="token comment">// list.size();</span></code></pre> <h3>reduce</h3> <p>【终止操作】使用提供的标识值和关联累积函数对该流的元素执行归约，并返回归约后的值。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">T</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token class-name">T</span> identity<span class="token punctuation">,</span><span class="token class-name">BinaryOperator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> accumulator<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token class-name">BinaryOperator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> accumulator<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">U</span><span class="token punctuation">&gt;</span></span><span class="token class-name">U</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token class-name">U</span> identity<span class="token punctuation">,</span><span class="token class-name">BiFunction</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">U</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">,</span><span class="token class-name">U</span><span class="token punctuation">&gt;</span></span> accumulator<span class="token punctuation">,</span><span class="token class-name">BinaryOperator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">U</span><span class="token punctuation">&gt;</span></span> combiner<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：将集合中的元素累加。</li> </ol> <pre><code class="prism language-java"><span class="token class-name">String</span> result<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">,</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token operator">-&gt;</span> s1<span class="token operator">+</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// JavaSpringMysqlPythonC++</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> result<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>s1<span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token operator">-&gt;</span> s1<span class="token operator">+</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <h3>collect</h3> <p>【终止操作】将 Stream 流转换为其他形式，该操作主要作为进行中间操作后的可变规约操作。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span><span class="token class-name">R</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Supplier</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> supplier<span class="token punctuation">,</span><span class="token class-name">BiConsumer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> accumulator<span class="token punctuation">,</span><span class="token class-name">BiConsumer</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">,</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> combiner<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">R</span><span class="token punctuation">,</span><span class="token class-name">A</span><span class="token punctuation">&gt;</span></span><span class="token class-name">R</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collector</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">,</span><span class="token class-name">A</span><span class="token punctuation">,</span><span class="token class-name">R</span><span class="token punctuation">&gt;</span></span> collector<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：将 List 转成 Set 。</li> </ol> <pre><code class="prism language-java">list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">collect</span><span class="token punctuation">(</span><span class="token class-name">Collectors</span><span class="token punctuation">.</span><span class="token function">toSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 连接字符串</span><span class="token comment">// String result = list.stream().collect(Collectors.joining("-"));</span></code></pre> <h2>查找与匹配</h2> <h3>anyMatch</h3> <p>【短路终止操作】如果流的任何元素与提供的 断言 匹配，则为 true ，否则为 false。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span><span class="token function">anyMatch</span><span class="token punctuation">(</span><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> predicate<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：判断集合中是否存在有长度大于 6 的元素。</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span> result<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">anyMatch</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token comment">// false</span></code></pre> <h3>allMatch</h3> <p>【短路终止操作】Stream 流中所有元素都与提供的 断言匹配，则为 ture，否则为 false。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span><span class="token function">allMatch</span><span class="token punctuation">(</span><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> predicate<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：判断集合中的元素长度是否都小于等于 6。</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span> result<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">allMatch</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;=</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// true</span></code></pre> <h3>noneMatch</h3> <p>【短路终止操作】Stream 流中的所有元素都与提供的 断言 不匹配，则返回 true，否则为 false。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span><span class="token function">noneMatch</span><span class="token punctuation">(</span><span class="token class-name">Predicate</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token operator">?</span><span class="token keyword">super</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span> predicate<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：判断集合中的元素长度是否都不满足大于 6。</li> </ol> <pre><code class="prism language-java"><span class="token keyword">boolean</span> result<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">noneMatch</span><span class="token punctuation">(</span>s<span class="token operator">-&gt;</span> s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&gt;</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// true</span></code></pre> <h3>findFirst</h3> <p>【短路终止操作】返回 Stream 流中第一个元素。</p> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">findFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> first<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findFirst</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> result<span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// Java</span></code></pre> <h3>findAny</h3> <p>【短路终止操作】返回 Stream 流中第一个元素。</p> <ul> <li>此操作的行为明显是不确定的； 可以自由选择流中的任何元素。</li> <li>这是为了在并行操作中实现最大性能；</li> <li>代价是对同一源的多次调用可能不会返回相同的结果。 （如果需要稳定的结果，请改用findFirst() 。）</li> </ul> <ol> <li>定义：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">T</span><span class="token punctuation">&gt;</span></span><span class="token function">findAny</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> <ol start="2"> <li>实例：</li> </ol> <pre><code class="prism language-java"><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> first<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">stream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findAny</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> result<span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// Java</span><span class="token class-name">Optional</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> first<span class="token operator">=</span> list<span class="token punctuation">.</span><span class="token function">parallelStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">findAny</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token class-name">String</span> result<span class="token operator">=</span> first<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// Python</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-109752.htm">springboot+layui有关分页问题</a></p>
+                                        <p>下一个：<a href="/news/article-110590.htm">SpringBoot profiles 实现多环境配置</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-96437.htm" title="宠物美容师证怎么考（宠物美容师证怎么考知乎）">宠物美容师证怎么考（宠物美容师证怎么考知乎）</a></li>
+                        <li class="py-2"><a href="/news/article-94938.htm" title="宠物粮食市场竞争与效益分析怎么写 宠物粮食市场竞争与效益分析怎么写的">宠物粮食市场竞争与效益分析怎么写 宠物粮食市场竞争与效益分析怎么写的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-4-free-high-speed-nodes.htm" title="VPN浏览器 | 5月4日20.8M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址">VPN浏览器 | 5月4日20.8M/S|免费Clash/SSR/V2ray/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-99358.htm" title="动物疫苗接种时间表格图片高清大图（动物疫苗接种时间表格图片高清大图）">动物疫苗接种时间表格图片高清大图（动物疫苗接种时间表格图片高清大图）</a></li>
+                        <li class="py-2"><a href="/news/article-100143.htm" title="中国10大兽药厂（中国10大兽药厂家排名）">中国10大兽药厂（中国10大兽药厂家排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-5-5-clash-v2ray-ss-ssr.htm" title="VPN浏览器 | 5月5日22.6M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点地址">VPN浏览器 | 5月5日22.6M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-94330.htm" title="学宠物医生上什么大学（学宠物医生上什么大学好）">学宠物医生上什么大学（学宠物医生上什么大学好）</a></li>
+                        <li class="py-2"><a href="/news/article-88950.htm" title="符合动物医院法定条件有哪些内容呢英语（符合动物医院法定条件有哪些内容呢英语怎么说）">符合动物医院法定条件有哪些内容呢英语（符合动物医院法定条件有哪些内容呢英语怎么说）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-20-free-node-subscribe.htm" title="VPN浏览器 | 4月20日20.1M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址">VPN浏览器 | 4月20日20.1M/S|免费SSR/V2ray/Clash/Shadowrocket订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-12-free-subscribe-node.htm" title="VPN浏览器 | 4月12日20.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址">VPN浏览器 | 4月12日20.4M/S|免费SSR/Clash/V2ray/Shadowrocket订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">14</span> <a href="/date/2025-05/" title="2025-05 归档">2025-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">89</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <style>
+    .video-heading {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .video-heading h3 {
+        font-size: 60px;
+        opacity: 0.8;
+        line-height: 58px;
+        font-weight: 300;
+        text-transform: capitalize;
+        color: #fff;
+    }
+
+    .video-responsive {
+        padding-bottom: 600px;
+        position: relative;
+        width: 100%;
+    }
+
+    .canvas,
+    .video {
+        left: 0;
+        position: absolute;
+        top: 0;
+        background: #000;
+        z-index: 5;
+        overflow: hidden;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    #over_video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        z-index: 10;
+        color: #FFF;
+    }
+
+    .bg-mask {
+        background: rgba(0, 0, 0, 0.3);
+        height: inherit;
+        display: grid;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    @media screen and (max-width: 568px) {
+
+        .canvas,
+        .video {
+            height: 400px;
+        }
+
+        .video-responsive {
+            padding-bottom: 400px;
+        }
+
+
+        .video-heading h3 {
+            font-size: 35px;
+            line-height: 48px;
+            margin-bottom: 20px;
+        }
+    }
+    </style>
+    <script src="/assets/website/js/frontend/vmess_node/canvas-video-player.js"></script>
+    <script>
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+    if (isIOS) {
+
+        var canvasVideo = new CanvasVideoPlayer({
+            videoSelector: '.video',
+            canvasSelector: '.canvas',
+            timelineSelector: false,
+            autoplay: true,
+            makeLoop: true,
+            pauseOnClick: false,
+            audio: false
+        });
+
+    } else {
+
+        // Use HTML5 video
+        document.querySelectorAll('.canvas')[0].style.display = 'none';
+
+    }
+    </script>
+    <!-- scripts -->
+    <footer>
+        <!-- footer -->
+        <section class="w3l-footer">
+            <div class="w3l-footer-16-main py-5">
+                <div class="container">
+                    <div class="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
+                        <div class="columns text-lg-left text-center">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>VPN浏览器 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="columns-2 mt-lg-0 mt-3">
+                            <ul class="social">
+                                <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                <span class="fa fa-angle-up"></span>
+            </button>
+            <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("movetop").style.display = "block";
+                } else {
+                    document.getElementById("movetop").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+            </script>
+            <!-- //move top -->
+            <script>
+            $(function() {
+                $('.navbar-toggler').click(function() {
+                    $('body').toggleClass('noscroll');
+                })
+            });
+            </script>
+        </section>
+        <!-- //footer -->
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/vmess_node/jquery-3.5.1.min.js"></script>
+    <!-- Template JavaScript -->
+    <!-- stats number counter-->
+    <script src="/assets/website/js/frontend/vmess_node/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/vmess_node/jquery.countup.js"></script>
+    <script>
+    $('.counter').countUp();
+    </script>
+    <!-- //stats number counter -->
+    <script src="/assets/website/js/frontend/vmess_node/jquery.magnific-popup.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.popup-with-zoom-anim').magnificPopup({
+            type: 'inline',
+
+            fixedContentPos: false,
+            fixedBgPos: true,
+
+            overflowY: 'auto',
+
+            closeBtnInside: true,
+            preloader: false,
+
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
+
+        $('.popup-with-move-anim').magnificPopup({
+            type: 'inline',
+
+            fixedContentPos: false,
+            fixedBgPos: true,
+
+            overflowY: 'auto',
+
+            closeBtnInside: true,
+            preloader: false,
+
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-slide-bottom'
+        });
+    });
+    </script>
+    <script src="/assets/website/js/frontend/vmess_node/owl.carousel.js"></script>
+    <!-- testimonials for owlcarousel -->
+    <script>
+    $(document).ready(function() {
+        $('.owl-one').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                667: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //testimonials script for owlcarousel -->
+    <!-- for blog carousel slider -->
+    <script>
+    $(document).ready(function() {
+        $('.owl-two').owlCarousel({
+            stagePadding: 20,
+            margin: 15,
+            nav: false,
+            loop: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //for blog carousel slider -->
+    <script>
+    var lFollowX = 0,
+        lFollowY = 0,
+        x = 0,
+        y = 0,
+        friction = 1 / 30;
+
+    function animate() {
+        x += (lFollowX - x) * friction;
+        y += (lFollowY - y) * friction;
+
+        translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+        $('.banner-image').css({
+            '-webit-transform': translate,
+            '-moz-transform': translate,
+            'transform': translate
+        });
+
+        window.requestAnimationFrame(animate);
+    }
+
+    $(window).on('mousemove click', function(e) {
+
+        var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+        var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+        lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+        lFollowY = (10 * lMouseY) / 100;
+
+    });
+
+    animate();
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+    $(function() {
+        $('.navbar-toggler').click(function() {
+            $('body').toggleClass('noscroll');
+        })
+    });
+    </script>
+    <!--/MENU-JS-->
+    <script>
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+    </script>
+    <!--//MENU-JS-->
+    <!-- Bootstrap JS -->
+    <script src="/assets/website/js/frontend/vmess_node/bootstrap.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
