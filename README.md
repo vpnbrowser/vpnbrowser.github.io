@@ -1,4 +1,4 @@
-# VPN浏览器 | 7月15日21.1M/S|免费Shadowrocket/SSR/Clash/V2ray订阅节点地址  更新时间 2025-07-15 09:52:38
+# VPN浏览器 | 7月21日18.5M/S|免费V2ray/Shadowrocket/Clash/SSR订阅节点地址  更新时间 2025-07-21 10:55:55
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnbrowser.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://vpnbrowser.github.io/uploads/2025/07/0-20250715.yaml
-- https://vpnbrowser.github.io/uploads/2025/07/1-20250715.yaml
-- https://vpnbrowser.github.io/uploads/2025/07/2-20250715.yaml
-- https://vpnbrowser.github.io/uploads/2025/07/3-20250715.yaml
-- https://vpnbrowser.github.io/uploads/2025/07/4-20250715.yaml
+- https://vpnbrowser.github.io/uploads/2025/07/0-20250721.yaml
+- https://vpnbrowser.github.io/uploads/2025/07/1-20250721.yaml
+- https://vpnbrowser.github.io/uploads/2025/07/2-20250721.yaml
+- https://vpnbrowser.github.io/uploads/2025/07/3-20250721.yaml
+- https://vpnbrowser.github.io/uploads/2025/07/4-20250721.yaml
 
 ### V2ray订阅链接
 
-- https://vpnbrowser.github.io/uploads/2025/07/0-20250715.txt
-- https://vpnbrowser.github.io/uploads/2025/07/1-20250715.txt
-- https://vpnbrowser.github.io/uploads/2025/07/2-20250715.txt
-- https://vpnbrowser.github.io/uploads/2025/07/3-20250715.txt
-- https://vpnbrowser.github.io/uploads/2025/07/4-20250715.txt
+- https://vpnbrowser.github.io/uploads/2025/07/0-20250721.txt
+- https://vpnbrowser.github.io/uploads/2025/07/1-20250721.txt
+- https://vpnbrowser.github.io/uploads/2025/07/2-20250721.txt
+- https://vpnbrowser.github.io/uploads/2025/07/3-20250721.txt
+- https://vpnbrowser.github.io/uploads/2025/07/4-20250721.txt
 
 ### Sing-box订阅链接
 
-- https://vpnbrowser.github.io/uploads/2025/07/20250715.json
+- https://vpnbrowser.github.io/uploads/2025/07/20250721.json
 
 ## 更多clash节点订阅 ：
 
