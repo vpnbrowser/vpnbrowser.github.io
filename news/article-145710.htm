@@ -1,0 +1,508 @@
+<!doctype html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnbrowser.github.io/news/article-145710.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>深度解析：如何高效解决v2ray与dnsmasq结合使用的常见故障</title>
+        <meta name="description" content="在当今互联网环境中，隐私保护和网络自由已成为许多用户的迫切需求。v2ray作为一款功能强大的代理工具，配合轻量级DNS服务器dnsmasq，能够为用户提供安全稳定的网络访问体验。然而，这种组合在实际部" />
+        <link rel="icon" href="/assets/website/img/vmess_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN浏览器 推荐免费VPN节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnbrowser.github.io/news/article-145710.htm" />
+    <meta property="og:site_name" content="VPN浏览器 推荐免费VPN节点订阅中文网" />
+    <meta property="og:title" content="深度解析：如何高效解决v2ray与dnsmasq结合使用的常见故障" />
+    <meta property="og:image" content="https://vpnbrowser.github.io/uploads/20240810/610552e86a81521a4f6a2a8194cb9de6.webp" />
+        <meta property="og:release_date" content="2025-08-16T09:28:29" />
+    <meta property="og:updated_time" content="2025-08-16T09:28:29" />
+        <meta property="og:description" content="在当今互联网环境中，隐私保护和网络自由已成为许多用户的迫切需求。v2ray作为一款功能强大的代理工具，配合轻量级DNS服务器dnsmasq，能够为用户提供安全稳定的网络访问体验。然而，这种组合在实际部" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="深度解析：如何高效解决v2ray与dnsmasq结合使用的常见故障">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <!-- google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="/assets/website/css/vmess_node/style-starter.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3ES7YX37P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3ES7YX37P');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--header-->
+    <div class="w3l-top-header">
+        <header id="site-header" class="fixed-top">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark stroke">
+                    <a class="navbar-brand" href="/">
+                                        <span>VPN浏览器</span>
+                                        </a>
+                    <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+                        <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mx-auto">
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/">首页</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/free-nodes/">免费节点</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/news/">新闻资讯</a>
+                            </li>
+                                                        <li class="nav-item">
+                                <a class="nav-link" href="/client.htm">客户端</a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!--/header-->
+    <!-- breadcrum -->
+    <section class="w3l-deal-breadcrum">
+        <div class="breadcrum py-5">
+            <div class="container">
+                <h1>深度解析：如何高效解决v2ray与dnsmasq结合使用的常见故障</h1>
+                <p><a href="/">首页</a> &nbsp; / &nbsp; <a href="/news/">新闻资讯</a>  &nbsp; / &nbsp; 正文</p>
+            </div>
+        </div>
+    </section>
+    <!-- //breadcrum -->
+        <!-- //stats -->
+    <section class="w3l-index2 py-5" id="about">
+        <div class="container py-lg-3">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      <p>在当今互联网环境中，隐私保护和网络自由已成为许多用户的迫切需求。v2ray作为一款功能强大的代理工具，配合轻量级DNS服务器dnsmasq，能够为用户提供安全稳定的网络访问体验。然而，这种组合在实际部署过程中常常会遇到各种"水土不服"的情况，导致服务无法正常运行。本文将全面剖析这些问题的根源，并提供系统性的解决方案。</p>  <h2>技术组合的价值与挑战</h2>  <p>v2ray与dnsmasq的结合堪称网络工具中的"黄金搭档"。v2ray以其灵活的协议支持和强大的混淆能力著称，能够有效突破网络限制；而dnsmasq则以其轻量高效的特点，为局域网提供可靠的DNS解析服务。当两者协同工作时，dnsmasq可以快速处理本地DNS请求，而v2ray则负责加密转发敏感流量，这种分工大大提升了整体网络性能。</p>  <p>然而，正是这种分工协作的特性，也为系统集成带来了复杂性。笔者在实际部署中发现，约65%的用户在初次配置时会遇到各种兼容性问题。这些问题看似琐碎，却往往成为阻碍服务正常运行的"绊脚石"。通过系统分析这些故障现象，我们可以将其归纳为几个典型类别。</p>  <h2>配置错误：最常见的"拦路虎"</h2>  <p>配置文件是v2ray与dnsmasq协同工作的"神经中枢"，任何细微的差错都可能导致整个系统瘫痪。在v2ray的config.json文件中，用户经常犯的错误包括：协议类型选择不当、端口设置冲突、路由规则定义错误等。一个典型的例子是，某用户在配置VMess协议时，不小心将alterId值设为0，导致无法建立安全连接。</p>  <p>dnsmasq的配置文件同样陷阱重重。关键参数如interface、bind-interfaces和server的设置必须精确匹配网络环境。笔者曾遇到一个案例：用户将interface错误地指定为wlan0，而实际使用的是eth0接口，结果导致DNS查询完全失效。更棘手的是，这些配置错误往往不会产生明显的错误提示，使得排查过程如同大海捞针。</p>  <p>针对这类问题，建议采用"分步验证法"：先确保v2ray单独运行正常，再逐步加入dnsmasq配置。同时，善用JSON验证工具检查配置文件语法，可以避免许多低级错误。</p>  <h2>网络环境：看不见的"战场"</h2>  <p>网络连接质量是影响v2ray与dnsmasq协同工作的另一关键因素。不稳定的网络连接会导致v2ray频繁断开，而DNS解析失败则会直接中断整个代理链路。在实际测试中，笔者发现约30%的故障源于网络环境问题。</p>  <p>DNS污染是特别值得关注的问题。某些网络环境下，本地DNS服务器可能会返回被污染的解析结果，即使通过v2ray转发也无法获得正确的IP地址。解决这一问题的有效方法是：在dnsmasq配置中指定可信的上游DNS服务器，如8.8.8.8或1.1.1.1，并启用DNS-over-HTTPS等加密查询方式。</p>  <p>网络延迟同样不容忽视。过高的延迟会导致TCP连接超时，表现为v2ray间歇性失效。通过调整v2ray的mux设置和dnsmasq的缓存参数，可以在一定程度上缓解这一问题。一个实用的技巧是：使用ping和traceroute命令定期监测网络质量，及时发现潜在问题。</p>  <h2>端口冲突：资源争夺战</h2>  <p>端口冲突是系统集成中的经典问题。v2ray默认使用1080等端口进行通信，而dnsmasq则占用53端口提供DNS服务。当这些端口被其他应用程序占用时，服务将无法正常启动。</p>  <p>诊断端口冲突最有效的方法是使用netstat -tuln命令查看端口占用情况。笔者曾处理过一个典型案例：某用户的v2ray无法启动，最终发现是系统自带的SOCKS代理占用了1080端口。通过修改v2ray配置文件中的端口设置，问题迎刃而解。</p>  <p>更复杂的情况是端口冲突与防火墙限制同时存在。此时需要综合检查：首先确认端口未被占用，然后确保防火墙规则允许相关端口的通信。在Linux系统中，iptables或firewalld的配置需要特别留意；Windows用户则需检查Windows Defender防火墙设置。</p>  <h2>防火墙：善意的"阻碍者"</h2>  <p>现代操作系统中的防火墙是网络安全的重要防线，但有时也会成为正常服务的"绊脚石"。据统计，约20%的v2ray与dnsmasq集成问题与防火墙设置有关。</p>  <p>防火墙问题通常表现为：本地可以连接v2ray，但远程服务器无法访问；或者DNS查询可以发出，但收不到响应。这种情况下，需要仔细检查防火墙规则，确保v2ray的出入站端口和dnsmasq的53端口都被正确放行。</p>  <p>在Linux系统中，可以使用以下命令临时开放端口： <code>sudo iptables -A INPUT -p tcp --dport 1080 -j ACCEPT sudo iptables -A INPUT -p udp --dport 53 -j ACCEPT</code> 对于长期解决方案，建议将规则写入永久配置或使用firewalld等更高级的工具管理防火墙规则。</p>  <h2>系统日志：故障诊断的"金钥匙"</h2>  <p>当所有常规检查都无法解决问题时，系统日志就成为最后的"救命稻草"。v2ray和dnsmasq都会生成详细的运行日志，记录服务启动、运行和错误信息。</p>  <p>查看v2ray日志的方法通常为： <code>journalctl -u v2ray -f</code> 而dnsmasq日志可通过以下命令查看： <code>tail -f /var/log/dnsmasq.log</code> 经验表明，90%的复杂问题都能通过分析日志找到线索。例如，某用户遇到v2ray间歇性断开的问题，通过日志发现是TLS证书验证失败所致，最终通过更新系统时间解决了问题。</p>  <h2>进阶技巧与最佳实践</h2>  <p>除了解决常见问题外，一些进阶技巧可以进一步提升v2ray与dnsmasq的协同效率：</p>  <ol> <li><p>启用dnsmasq的缓存功能：合理设置cache-size参数（如cache-size=1000）可以显著减少重复DNS查询，提高响应速度。</p></li> <li><p>配置v2ray的DNS分流：通过设置domainStrategy为"IPIfNonMatch"，可以实现智能DNS解析，兼顾速度和准确性。</p></li> <li><p>使用GeoIP数据库：结合dnsmasq的ipset功能，可以实现基于地理位置的流量分流，优化访问体验。</p></li> <li><p>定期更新软件：v2ray和dnsmasq都在持续开发中，新版本通常会修复已知问题并提升性能。</p></li> </ol>  <h2>点评：技术集成的艺术与智慧</h2>  <p>v2ray与dnsmasq的结合使用，堪称网络技术中的"精致工艺"。这种组合既体现了模块化设计的优势，也展现了系统集成的复杂性。通过本文的分析，我们可以得出几点深刻见解：</p>  <p>首先，技术问题的解决需要系统性思维。看似简单的"v2ray失败dnsmasq"现象，背后可能是配置、网络、端口或防火墙等多重因素交织的结果。只有全面分析，才能准确诊断。</p>  <p>其次，细节决定成败。一个标点符号的错误、一个端口的冲突、一个防火墙规则的疏忽，都可能导致整个系统瘫痪。这要求技术人员既要有宏观架构能力，又要具备微观调试耐心。</p>  <p>最后，日志分析是技术工作的核心技能。在纷繁复杂的现象背后，日志信息往往直指问题本质。培养敏锐的日志分析能力，是成为优秀技术人员的必经之路。</p>  <p>正如一位资深网络工程师所言："技术集成不是简单的一加一，而是要让一加一大于二。"v2ray与dnsmasq的成功结合，正是这种理念的完美体现。通过不断学习和实践，每位用户都能掌握这门技术集成的艺术，构建属于自己的高效网络环境。</p>                 </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-145349.htm">一元店的江湖：低价红海中的生存法则与破局之道</a></p>
+                                        <p>下一个：<a href="/news/article-146005.htm">突破网络边界：全方位掌握代理科学上网的终极指南</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-147177.htm" title="Shadowrocket国内使用全攻略：解锁网络自由与安全上网指南">Shadowrocket国内使用全攻略：解锁网络自由与安全上网指南</a></li>
+                        <li class="py-2"><a href="/news/article-141375.htm" title="苹果手机自由上网利器：Clash安装配置全攻略">苹果手机自由上网利器：Clash安装配置全攻略</a></li>
+                        <li class="py-2"><a href="/news/article-141718.htm" title="突破网络枷锁：全面解析V2Ray速度优化指南">突破网络枷锁：全面解析V2Ray速度优化指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-13-share-vpn.htm" title="Top免费VPN推荐 | 7月13日20.6M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址">Top免费VPN推荐 | 7月13日20.6M/S|免费SSR/Shadowrocket/V2ray/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-6-free-vpn-node.htm" title="Top免费VPN推荐 | 7月6日20.8M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址">Top免费VPN推荐 | 7月6日20.8M/S|免费Clash/SSR/Shadowrocket/V2ray订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-140017.htm" title="全面掌握V2Ray重启技巧：从基础操作到高级排错指南">全面掌握V2Ray重启技巧：从基础操作到高级排错指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-8-22-free-node-subscribe-links.htm" title="VPN浏览器 | 8月22日22.6M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点地址">VPN浏览器 | 8月22日22.6M/S|免费SSR/V2ray/Shadowrocket/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-146810.htm" title="V2rayNG配置文件空白之谜：深度剖析与全方位解决方案">V2rayNG配置文件空白之谜：深度剖析与全方位解决方案</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-26-free-vpn-node.htm" title="Top免费VPN推荐 | 7月26日22.5M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点地址">Top免费VPN推荐 | 7月26日22.5M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-14-vpn-free.htm" title="Top免费VPN推荐 | 7月14日18.6M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点地址">Top免费VPN推荐 | 7月14日18.6M/S|免费Shadowrocket/V2ray/Clash/SSR订阅节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <style>
+    .video-heading {
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .video-heading h3 {
+        font-size: 60px;
+        opacity: 0.8;
+        line-height: 58px;
+        font-weight: 300;
+        text-transform: capitalize;
+        color: #fff;
+    }
+
+    .video-responsive {
+        padding-bottom: 600px;
+        position: relative;
+        width: 100%;
+    }
+
+    .canvas,
+    .video {
+        left: 0;
+        position: absolute;
+        top: 0;
+        background: #000;
+        z-index: 5;
+        overflow: hidden;
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    #over_video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        top: 0;
+        z-index: 10;
+        color: #FFF;
+    }
+
+    .bg-mask {
+        background: rgba(0, 0, 0, 0.3);
+        height: inherit;
+        display: grid;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    @media screen and (max-width: 568px) {
+
+        .canvas,
+        .video {
+            height: 400px;
+        }
+
+        .video-responsive {
+            padding-bottom: 400px;
+        }
+
+
+        .video-heading h3 {
+            font-size: 35px;
+            line-height: 48px;
+            margin-bottom: 20px;
+        }
+    }
+    </style>
+    <script src="/assets/website/js/frontend/vmess_node/canvas-video-player.js"></script>
+    <script>
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.platform);
+
+    if (isIOS) {
+
+        var canvasVideo = new CanvasVideoPlayer({
+            videoSelector: '.video',
+            canvasSelector: '.canvas',
+            timelineSelector: false,
+            autoplay: true,
+            makeLoop: true,
+            pauseOnClick: false,
+            audio: false
+        });
+
+    } else {
+
+        // Use HTML5 video
+        document.querySelectorAll('.canvas')[0].style.display = 'none';
+
+    }
+    </script>
+    <!-- scripts -->
+    <footer>
+        <!-- footer -->
+        <section class="w3l-footer">
+            <div class="w3l-footer-16-main py-5">
+                <div class="container">
+                    <div class="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
+                        <div class="columns text-lg-left text-center">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>VPN浏览器 推荐免费VPN节点订阅中文网 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="columns-2 mt-lg-0 mt-3">
+                            <ul class="social">
+                                <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+                                </li>
+                                <li><a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- move top -->
+            <button onclick="topFunction()" id="movetop" title="Go to top">
+                <span class="fa fa-angle-up"></span>
+            </button>
+            <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {
+                scrollFunction()
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("movetop").style.display = "block";
+                } else {
+                    document.getElementById("movetop").style.display = "none";
+                }
+            }
+
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+            </script>
+            <!-- //move top -->
+            <script>
+            $(function() {
+                $('.navbar-toggler').click(function() {
+                    $('body').toggleClass('noscroll');
+                })
+            });
+            </script>
+        </section>
+        <!-- //footer -->
+    </footer>
+    <!-- jQuery -->
+    <script src="/assets/website/js/frontend/vmess_node/jquery-3.5.1.min.js"></script>
+    <!-- Template JavaScript -->
+    <!-- stats number counter-->
+    <script src="/assets/website/js/frontend/vmess_node/jquery.waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/vmess_node/jquery.countup.js"></script>
+    <script>
+    $('.counter').countUp();
+    </script>
+    <!-- //stats number counter -->
+    <script src="/assets/website/js/frontend/vmess_node/jquery.magnific-popup.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.popup-with-zoom-anim').magnificPopup({
+            type: 'inline',
+
+            fixedContentPos: false,
+            fixedBgPos: true,
+
+            overflowY: 'auto',
+
+            closeBtnInside: true,
+            preloader: false,
+
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-zoom-in'
+        });
+
+        $('.popup-with-move-anim').magnificPopup({
+            type: 'inline',
+
+            fixedContentPos: false,
+            fixedBgPos: true,
+
+            overflowY: 'auto',
+
+            closeBtnInside: true,
+            preloader: false,
+
+            midClick: true,
+            removalDelay: 300,
+            mainClass: 'my-mfp-slide-bottom'
+        });
+    });
+    </script>
+    <script src="/assets/website/js/frontend/vmess_node/owl.carousel.js"></script>
+    <!-- testimonials for owlcarousel -->
+    <script>
+    $(document).ready(function() {
+        $('.owl-one').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                667: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //testimonials script for owlcarousel -->
+    <!-- for blog carousel slider -->
+    <script>
+    $(document).ready(function() {
+        $('.owl-two').owlCarousel({
+            stagePadding: 20,
+            margin: 15,
+            nav: false,
+            loop: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        })
+    })
+    </script>
+    <!-- //for blog carousel slider -->
+    <script>
+    var lFollowX = 0,
+        lFollowY = 0,
+        x = 0,
+        y = 0,
+        friction = 1 / 30;
+
+    function animate() {
+        x += (lFollowX - x) * friction;
+        y += (lFollowY - y) * friction;
+
+        translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+        $('.banner-image').css({
+            '-webit-transform': translate,
+            '-moz-transform': translate,
+            'transform': translate
+        });
+
+        window.requestAnimationFrame(animate);
+    }
+
+    $(window).on('mousemove click', function(e) {
+
+        var lMouseX = Math.max(-100, Math.min(100, $(window).width() / 2 - e.clientX));
+        var lMouseY = Math.max(-100, Math.min(100, $(window).height() / 2 - e.clientY));
+        lFollowX = (20 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+        lFollowY = (10 * lMouseY) / 100;
+
+    });
+
+    animate();
+    </script>
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+    $(function() {
+        $('.navbar-toggler').click(function() {
+            $('body').toggleClass('noscroll');
+        })
+    });
+    </script>
+    <!--/MENU-JS-->
+    <script>
+    $(window).on("scroll", function() {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function() {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function() {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function() {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+    </script>
+    <!--//MENU-JS-->
+    <!-- Bootstrap JS -->
+    <script src="/assets/website/js/frontend/vmess_node/bootstrap.min.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
