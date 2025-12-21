@@ -335,6 +335,16 @@ sudo systemctl start erye-v2ray
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
+    <div class="panel-body">
+        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
+    <div class="panel-body">
+        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Mellow 支持哪些平台？</h5></div>
     <div class="panel-body">
         Mellow 是基于 Electron 的跨平台代理工具，支持 Windows、macOS 和 Linux。它通过 TUN 模式接管全局流量，并支持 Clash 规则和订阅格式，非常灵活。<hr />    </div>
@@ -343,6 +353,11 @@ sudo systemctl start erye-v2ray
     <div class="panel-heading"><h5>Surfboard 策略组如何优化视频访问？</h5></div>
     <div class="panel-body">
         通过策略组将视频流量分配到低延迟、高带宽节点，Surfboard 可自动切换到最佳节点。减少缓冲和卡顿，提高在线视频播放流畅性和整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 使用 AEAD 加密对安全性有何帮助？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。高封锁环境下使用，有助于保持节点长期可用，保证数据安全和连接稳定性，同时降低被检测的风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的协议插件如何增强安全性？</h5></div>
@@ -355,29 +370,14 @@ sudo systemctl start erye-v2ray
         透明代理通过 TUN 或 WinDivert 拦截系统 IP 层流量，无需配置每个应用。适合全局科学上网、在线游戏或对局域网设备统一代理的场景。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 使用 AEAD 加密对安全性有何帮助？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改、重放攻击和流量特征泄露。高封锁环境下使用，有助于保持节点长期可用，保证数据安全和连接稳定性，同时降低被检测的风险。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
-    <div class="panel-body">
-        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的混淆和协议设置如何选择才能绕过封锁？</h5></div>
-    <div class="panel-body">
-        选择模拟 HTTPS 的混淆方式如 tls1.2_ticket_auth，并搭配 AEAD 或协议插件，可以有效隐藏流量特征，降低被封锁风险。不同网络环境需测试选择最优组合。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 可以管理多少个节点？</h5></div>
     <div class="panel-body">
         Potatso Lite 可以管理数十个节点，适合轻量用户使用。虽然不支持批量自动更新，但可以手动添加和删除节点，结合策略组实现基本分流和管理功能。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的 route 功能如何工作？</h5></div>
+    <div class="panel-heading"><h5>SSR 的混淆和协议设置如何选择才能绕过封锁？</h5></div>
     <div class="panel-body">
-        Sing-box 提供强大的路由系统，允许用户基于 IP、域名、GEO 数据库、进程名等条件精细分流。配置完成后，程序自动匹配规则，将不同流量转发到对应的出口。<hr />    </div>
+        选择模拟 HTTPS 的混淆方式如 tls1.2_ticket_auth，并搭配 AEAD 或协议插件，可以有效隐藏流量特征，降低被封锁风险。不同网络环境需测试选择最优组合。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 无法识别某游戏流量时应如何处理？</h5></div>
@@ -411,16 +411,16 @@ sudo systemctl start erye-v2ray
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-12-14-node-share.htm" title="VPN浏览器 | 12月14日19.2M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点地址">VPN浏览器 | 12月14日19.2M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-13-top-vpn-node.htm" title="VPN浏览器 | 12月13日19.5M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址">VPN浏览器 | 12月13日19.5M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Shadowrocket节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-28-node-share.htm" title="VPN浏览器 | 11月28日22.9M/S|免费SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址">VPN浏览器 | 11月28日22.9M/S|免费SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-13-free-vpn.htm" title="VPN浏览器 | 11月13日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点地址">VPN浏览器 | 11月13日22.7M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-5-top-vpn.htm" title="VPN浏览器 | 12月5日20.4M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点订阅节点地址">VPN浏览器 | 12月5日20.4M/S|免费Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点订阅节点地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-18-top-vpn-node.htm" title="VPN浏览器 | 11月18日21.1M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点地址">VPN浏览器 | 11月18日21.1M/S|免费Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-11-node-share-links.htm" title="VPN浏览器 | 12月11日22.6M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址">VPN浏览器 | 12月11日22.6M/S|免费V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-node-subscribe-links.htm" title="VPN浏览器 | 11月12日20.7M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址">VPN浏览器 | 11月12日20.7M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-top-vpn-node.htm" title="VPN浏览器 | 11月6日21.5M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址">VPN浏览器 | 11月6日21.5M/S|免费Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-8-node-share-links.htm" title="VPN浏览器 | 12月8日20.3M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址">VPN浏览器 | 12月8日20.3M/S|免费Singbox节点/Clash节点/V2ray节点/Shadowrocket节点/SSR节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-11-mianfei-vpn.htm" title="VPN浏览器 | 11月11日20.7M/S|免费Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址">VPN浏览器 | 11月11日20.7M/S|免费Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Singbox节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-3-free-node-subscribe.htm" title="VPN浏览器 | 12月3日18.2M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点地址">VPN浏览器 | 12月3日18.2M/S|免费Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点订阅节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-27-free-node-subscribe-links.htm" title="VPN浏览器 | 11月27日20.7M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址">VPN浏览器 | 11月27日20.7M/S|免费V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-2-top-vpn.htm" title="VPN浏览器 | 12月2日18.1M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点订阅节点地址">VPN浏览器 | 12月2日18.1M/S|免费SSR节点/Clash节点/Singbox节点/Shadowrocket节点/V2ray节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-20-vpn-proxy.htm" title="VPN浏览器 | 12月20日21.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅节点地址">VPN浏览器 | 12月20日21.3M/S|免费Shadowrocket节点/Singbox节点/SSR节点/V2ray节点/Clash节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-14-mianfei-vpn.htm" title="VPN浏览器 | 11月14日20.7M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点地址">VPN浏览器 | 11月14日20.7M/S|免费Singbox节点/V2ray节点/SSR节点/Clash节点/Shadowrocket节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-free-node-subscribe-links.htm" title="VPN浏览器 | 12月1日18.8M/S|免费SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点地址">VPN浏览器 | 12月1日18.8M/S|免费SSR节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-top-vpn-node.htm" title="VPN浏览器 | 11月9日21.8M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点地址">VPN浏览器 | 11月9日21.8M/S|免费V2ray节点/Clash节点/Shadowrocket节点/SSR节点/Singbox节点订阅节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-17-free-vpn.htm" title="VPN浏览器 | 12月17日19.1M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点订阅节点地址">VPN浏览器 | 12月17日19.1M/S|免费SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点订阅节点地址</a></li>
                     </ul>
     </div>
 </div>
@@ -432,7 +432,7 @@ sudo systemctl start erye-v2ray
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">20</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
